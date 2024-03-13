@@ -17,7 +17,7 @@ cd chatgpt-clone
 To try out the 'Allow PHI' checkbox you can find some [test PHI/PII data here](https://github.com/tokern/piicatcher/blob/master/tests/samples/sample-data.csv)
 
 
-# Orifinal Content (xtekky)
+# Original Content (xtekky)
 
 Development of this repository is currently in a halt, due to lack of time. Updates are comming end of June.
 
