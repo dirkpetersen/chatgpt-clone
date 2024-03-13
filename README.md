@@ -2,6 +2,7 @@
 
 Check here https://github.com/xtekky/chatgpt-clone for the original (currently inactive)
 
+![image](https://github.com/dirkpetersen/chatgpt-clone/assets/1427719/4c5432c6-635f-4732-8620-8412dbc3aa86)
 
 ## Install / Run 
 
@@ -12,6 +13,9 @@ git clone https://github.com/dirkpetersen/chatgpt-clone
 cd chatgpt-clone
 ./run.sh
 ```
+
+To try out the 'Allow PHI' checkbox you can find some [test PHI/PII data here](https://github.com/tokern/piicatcher/blob/master/tests/samples/sample-data.csv)
+
 
 # Orifinal Content (xtekky)
 
