@@ -1,3 +1,3 @@
-from flask import Flask
+import flask
 
-app = Flask(__name__, template_folder='./../client/html')
+app = flask.Flask(__name__, template_folder='./../client/html')

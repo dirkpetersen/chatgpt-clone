@@ -79,8 +79,9 @@
                     <div class="info">
                         <i class="fa-regular fa-circle-info"></i>
                         <span class="convo-title">By: @xtekky<br>
-                            Version: 0.0.1-beta<br>
-                            Release: 2023-04-18<br>
+                            Modified: @dirkpetersen<br>
+                            Version: 0.1.0<br>
+                            Release: 2024-03-13<br>
                         </span>
                     </div>
                 </div>
@@ -96,7 +97,7 @@
                 </div>
                 <div class="user-input">
                     <div class="box input-box">
-                        <textarea id="message-input" placeholder="Ask a question" cols="30" rows="10" style="white-space: pre-wrap;" oninput="resizeTextarea(this)"></textarea>
+                        <textarea id="message-input" placeholder="Ask a question (but do NOT put any PHI data here)" cols="30" rows="10" style="white-space: pre-wrap;" oninput="resizeTextarea(this)"></textarea>
                         <div id="send-button">
                             <i class="fa-regular fa-paper-plane-top"></i>
                         </div>
@@ -104,19 +105,25 @@
                 </div>
                 <div class="buttons">
                     <div class="field">
-                        <input type="checkbox" id="switch"/>
-                        <label for="switch"></label>
-                        <span class="about">Web Access</span>
-                    </div>
-                    <div class="field">
                         <select name="model" id="model">
-                            <option value="gpt-3.5-turbo" selected>gpt-3.5-turbo</option>
-                            <option value="gpt-4">gpt-4</option>
-                            <option value="gpt-3.5-turbo-0301">gpt-3.5-turbo-0301</option>
-                            <option value="gpt-4-0314">gpt-4-0314</option>
+                            <option value="gpt-4">GPT-4</option>
+                            <!-- Include dated model releases for GPT-4 here -->
+                            <option value="gpt-4-turbo-preview">GPT-4-Turbo-Preview</option>
+                            <!-- Include dated model releases for GPT-4-Turbo-Preview here -->
+                            <option value="gpt-4-vision-preview">GPT-4-Vision-Preview</option>
+                            <option value="gpt-4-32k">GPT-4-32K</option>
+                            <!-- Include dated model releases for GPT-4-32K here -->
+                            <option value="gpt-3.5-turbo">GPT-3.5-Turbo</option>
+                            <!-- Include dated model releases for GPT-3.5-Turbo here -->
+                            <option value="gpt-3.5-turbo-16k">GPT-3.5-Turbo-16K</option>
+                            <!-- Include dated model releases for GPT-3.5-Turbo-16K here -->
+                            <!-- Include fine-tuned versions of GPT-3.5-Turbo here -->
                         </select>
+                        
                         <!-- <span class="about">Model</span> -->
                     </div>
+
+                    <!-- 
                     <div class="field">
                         <select name="jailbreak" id="jailbreak">
                             <option value="default" selected>default</option>
@@ -128,7 +135,10 @@
                             <option value="gpt-evil-1.0">evil 1.0</option>
                         </select>
                     </div>
+                -->
 
+                
+                <!-- 
                 <form class="color-picker" action="">
                     <fieldset>
                         <legend class="visually-hidden">Pick a color scheme</legend>
@@ -138,16 +148,32 @@
                         <label for="pink" class="visually-hidden">Pink theme</label>
                         <input type="radio" title="pink" id="pink" name="theme">
                     
-                        <label for="blue" class="visually-hidden">Blue theme</label>
-                        <input type="radio" title="blue" id="blue" name="theme">
-                    
-                        <label for="green" class="visually-hidden">Green theme</label>
-                        <input type="radio" title="green" id="green" name="theme">
-                    
-                        <label for="dark" class="visually-hidden">Dark theme</label>
-                        <input type="radio" title="dark" id="dark" name="theme">
                     </fieldset>
                     </form>
+                -->
+
+    
+
+                    <div class="field">
+                        <input type="checkbox" id="phi"/>
+                        <label for="phi"></label>
+                        <span class="about">Allow PHI</span>
+                    </div>                
+                    <div class="field">
+                        <input type="checkbox" id="lightmode"/>
+                        <label for="lightmode"></label>
+                        <span class="about">Light Mode</span>
+                    </div>
+                    
+                    <!-- 
+                    <div class="field">
+                        <input type="checkbox" id="switch"/>
+                        <label for="switch"></label>
+                        <span class="about">Web Access</span>
+                    </div>
+                    -->
+
+                    
                 </div>
             </div>
         </div>

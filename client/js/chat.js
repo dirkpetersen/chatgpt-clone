@@ -68,8 +68,10 @@ const ask_gpt = async (message) => {
     window.scrollTo(0, 0);
     window.controller = new AbortController();
 
-    jailbreak = document.getElementById("jailbreak");
+    // jailbreak = document.getElementById("jailbreak");
     model = document.getElementById("model");
+    phi = document.getElementById("phi");
+    lightmode = document.getElementById("lightmode");
     prompt_lock = true;
     window.text = ``;
     window.token = message_id();
@@ -122,12 +124,14 @@ const ask_gpt = async (message) => {
         conversation_id: window.conversation_id,
         action: `_ask`,
         model: model.options[model.selectedIndex].value,
-        jailbreak: jailbreak.options[jailbreak.selectedIndex].value,
+        // jailbreak: jailbreak.options[jailbreak.selectedIndex].value,
+        phi: phi.checked,
+        lightmode: lightmode.checked,
         meta: {
           id: window.token,
           content: {
             conversation: await get_conversation(window.conversation_id),
-            internet_access: document.getElementById("switch").checked,
+            // internet_access: document.getElementById("switch").checked,
             content_type: "text",
             parts: [
               {
@@ -502,7 +506,7 @@ document.querySelector(".mobile-sidebar").addEventListener("click", (event) => {
 });
 
 const register_settings_localstorage = async () => {
-  settings_ids = ["switch", "model", "jailbreak"];
+  settings_ids = ["model", "phi", "lightmode"]; // "switch", "jailbreak"
   settings_elements = settings_ids.map((id) => document.getElementById(id));
   settings_elements.map((element) =>
     element.addEventListener(`change`, async (event) => {
@@ -521,7 +525,7 @@ const register_settings_localstorage = async () => {
 };
 
 const load_settings_localstorage = async () => {
-  settings_ids = ["switch", "model", "jailbreak"];
+  settings_ids = ["model", "phi", "lightmode"]; //"switch", "jailbreak"
   settings_elements = settings_ids.map((id) => document.getElementById(id));
   settings_elements.map((element) => {
     if (localStorage.getItem(element.id)) {
@@ -539,29 +543,55 @@ const load_settings_localstorage = async () => {
   });
 };
 
+// // Theme storage for recurring viewers
+// const storeTheme = function (theme) {
+//   localStorage.setItem("theme", theme);
+// };
+
+// // set theme when visitor returns
+// const setTheme = function () {
+//   const activeTheme = localStorage.getItem("theme");
+//   colorThemes.forEach((themeOption) => {
+//     if (themeOption.id === activeTheme) {
+//       themeOption.checked = true;
+//     }
+//   });
+//   // fallback for no :has() support
+//   document.documentElement.className = activeTheme;
+// };
+
+// colorThemes.forEach((themeOption) => {
+//   themeOption.addEventListener("click", () => {
+//     storeTheme(themeOption.id);
+//     // fallback for no :has() support
+//     document.documentElement.className = themeOption.id;
+//   });
+// });
+
+// document.onload = setTheme();
+
+
+
 // Theme storage for recurring viewers
 const storeTheme = function (theme) {
   localStorage.setItem("theme", theme);
 };
 
-// set theme when visitor returns
+// Set theme when visitor returns or use light mode
 const setTheme = function () {
   const activeTheme = localStorage.getItem("theme");
-  colorThemes.forEach((themeOption) => {
-    if (themeOption.id === activeTheme) {
-      themeOption.checked = true;
-    }
-  });
-  // fallback for no :has() support
   document.documentElement.className = activeTheme;
+  // Set light mode checkbox state
+  const lightModeCheckbox = document.getElementById('lightmode');
+  lightModeCheckbox.checked = (activeTheme === 'light');
 };
 
-colorThemes.forEach((themeOption) => {
-  themeOption.addEventListener("click", () => {
-    storeTheme(themeOption.id);
-    // fallback for no :has() support
-    document.documentElement.className = themeOption.id;
-  });
+// Event listener for the light mode checkbox
+const lightModeCheckbox = document.getElementById('lightmode');
+lightModeCheckbox.addEventListener("change", () => {
+  const theme = lightModeCheckbox.checked ? 'pink' : 'light'; // default can be your standard theme
+  storeTheme(theme);
+  document.documentElement.className = theme;
 });
 
 document.onload = setTheme();

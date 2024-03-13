@@ -1,3 +1,20 @@
+# Fork of chatgpt-clone 
+
+Check here https://github.com/xtekky/chatgpt-clone for the original (currently inactive)
+
+
+## Install / Run 
+
+Run the following commands to get going, replace XXXXX with your OpenAI API key 
+```
+export OPENAI_API_KEY=sk-XXXXXXXXXXXXXX
+git clone https://github.com/dirkpetersen/chatgpt-clone
+cd chatgpt-clone
+./run.sh
+```
+
+# Orifinal Content (xtekky)
+
 Development of this repository is currently in a halt, due to lack of time. Updates are comming end of June.
 
 working again ; ) 
