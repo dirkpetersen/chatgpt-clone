@@ -1,6 +1,6 @@
 # Fork of chatgpt-clone 
 
-Check here https://github.com/xtekky/chatgpt-clone for the original (currently inactive)
+Check here https://github.com/xtekky/chatgpt-clone for the original (currently inactive), here is an updated UI:
 
 ![image](https://github.com/dirkpetersen/chatgpt-clone/assets/1427719/4c5432c6-635f-4732-8620-8412dbc3aa86)
 
